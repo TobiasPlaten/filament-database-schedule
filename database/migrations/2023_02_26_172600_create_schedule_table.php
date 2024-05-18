@@ -36,7 +36,7 @@ class CreateScheduleTable extends Migration
             $table->boolean('sendmail_error')->default(false);
             $table->boolean('log_success')->default(true);
             $table->boolean('log_error')->default(true);
-            $table->boolean('status')->default(true);
+            $table->enum('status', ['active', 'inactive', 'trashed'])->default('active');
             $table->boolean('run_in_background')->default(false);
             $table->boolean('sendmail_success')->default(false);
 
